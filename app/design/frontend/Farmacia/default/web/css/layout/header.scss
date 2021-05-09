@@ -1,10 +1,16 @@
+/*=================================
+    Main Styles
+=================================*/
+
 .navigation, .breadcrumbs, .page-header .header.panel, .footer.content, .page-wrapper>.widget, .page-wrapper>.page-bottom, .block.category.event, .top-container, .page-main {
     max-width: 100%!important;
     width: 100% !important;
     padding: 0 !important;
 }
 
-
+/*=================================
+    Top Header Styles
+=================================*/
 
 .page-header {
     .panel.wrapper {
@@ -78,6 +84,10 @@
     }
 }
 
+/*=================================
+    Middle Header Styles
+=================================*/
+
 .header.content {
     display: flex;
     align-items: center;
@@ -148,6 +158,55 @@
         }
     }
 }
+
+.header-details {
+    order: 3;
+    display: flex;
+    align-items: center;
+
+    .header-detail {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        i {
+            color: $primary-color;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+    }
+
+    .header-detail-content {
+        p {
+            margin-bottom: 0;
+            color: $primary-color;
+            font-family: $primary-font-family;
+            font-size: 15px;
+            letter-spacing: .9px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 23px;
+            white-space: nowrap;
+        }
+
+        span {
+            line-height: 23px;
+            white-space: nowrap;
+            font-family: $secondary-font-family;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+        }
+    }
+}
+
+/*=================================
+    Minicart Styles
+=================================*/
 
 .minicart-wrapper {
     order: 4;
@@ -359,6 +418,10 @@
     }
 }
 
+/*=================================
+    Search Styles
+=================================*/
+
 .block-search {
     order: 2;
     float: none !important;
@@ -404,51 +467,6 @@
         &::before {
             color: #fff !important;
             font-size: 32px !important
-        }
-    }
-}
-
-.header-details {
-    order: 3;
-    display: flex;
-    align-items: center;
-
-    .header-detail {
-        display: flex;
-        align-items: center;
-        margin-right: 30px;
-
-        &:last-child {
-            margin-right: 0;
-        }
-
-        i {
-            color: $primary-color;
-            margin-right: 15px;
-            font-size: 20px;
-        }
-    }
-
-    .header-detail-content {
-        p {
-            margin-bottom: 0;
-            color: $primary-color;
-            font-family: $primary-font-family;
-            font-size: 15px;
-            letter-spacing: .9px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 23px;
-            white-space: nowrap;
-        }
-
-        span {
-            line-height: 23px;
-            white-space: nowrap;
-            font-family: $secondary-font-family;
-            font-size: 15px;
-            font-style: normal;
-            font-weight: 400;
         }
     }
 }

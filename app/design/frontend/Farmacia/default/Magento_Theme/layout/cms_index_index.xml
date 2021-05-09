@@ -3,7 +3,7 @@
     <body>
         <referenceContainer name="main">
             <block name="home.banner" before="-" template="Magento_Theme::home.banner.phtml" />
-            <!-- <block name="home.features" after="home.banner" template="Magento_Theme::home.features.phtml" /> -->
+            <block name="home.features" after="home.banner" template="Magento_Theme::home.features.phtml" />
             <!-- <block name="home.products" after="home.features" template="Magento_Theme::home.products.phtml" class="Magento\Catalog\Block\Product\ListProduct" /> -->
             <!-- <block name="home.blocks" after="home.products" template="Magento_Theme::home.blocks.phtml" /> -->
             <!-- <container name="home.blog.newsletter" after="home.blocks" htmlTag="div" htmlClass="home-blog-newsletter">

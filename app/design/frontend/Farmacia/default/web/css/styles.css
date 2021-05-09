@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/*=================================
+    Importing Libraries
+=================================*/
 /*!
  * Font Awesome Pro 6.0.0-alpha1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license (Commercial License)
@@ -14963,6 +14966,15 @@ readers do not read off random characters that represent icons */
   opacity: 0.75;
 }
 
+/*=================================
+    Importing Variables and Layouts 
+=================================*/
+/*=================================
+    Main Colors
+=================================*/
+/*=================================
+    Main Fonts
+=================================*/
 @font-face {
   font-family: "BreeSerif";
   font-style: normal;
@@ -14970,12 +14982,18 @@ readers do not read off random characters that represent icons */
   src: url("../fonts/BreeSerif-Regular.ttf") format("truetype");
 }
 
+/*=================================
+    Main Styles
+=================================*/
 .navigation, .breadcrumbs, .page-header .header.panel, .footer.content, .page-wrapper > .widget, .page-wrapper > .page-bottom, .block.category.event, .top-container, .page-main {
   max-width: 100% !important;
   width: 100% !important;
   padding: 0 !important;
 }
 
+/*=================================
+    Top Header Styles
+=================================*/
 .page-header .panel.wrapper {
   background-color: #4589CD;
   border-bottom: 0;
@@ -15036,6 +15054,9 @@ readers do not read off random characters that represent icons */
   color: #fff;
 }
 
+/*=================================
+    Middle Header Styles
+=================================*/
 .header.content {
   display: flex;
   align-items: center;
@@ -15105,6 +15126,52 @@ readers do not read off random characters that represent icons */
   margin-left: 3px;
 }
 
+.header-details {
+  order: 3;
+  display: flex;
+  align-items: center;
+}
+
+.header-details .header-detail {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.header-details .header-detail:last-child {
+  margin-right: 0;
+}
+
+.header-details .header-detail i {
+  color: #4589CD;
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+.header-details .header-detail-content p {
+  margin-bottom: 0;
+  color: #4589CD;
+  font-family: "BreeSerif";
+  font-size: 15px;
+  letter-spacing: .9px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23px;
+  white-space: nowrap;
+}
+
+.header-details .header-detail-content span {
+  line-height: 23px;
+  white-space: nowrap;
+  font-family: "Open Sans";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/*=================================
+    Minicart Styles
+=================================*/
 .minicart-wrapper {
   order: 4;
   margin-left: 88px !important;
@@ -15287,6 +15354,9 @@ readers do not read off random characters that represent icons */
   text-align: unset;
 }
 
+/*=================================
+    Search Styles
+=================================*/
 .block-search {
   order: 2;
   float: none !important;
@@ -15344,49 +15414,6 @@ readers do not read off random characters that represent icons */
   font-size: 32px !important;
 }
 
-.header-details {
-  order: 3;
-  display: flex;
-  align-items: center;
-}
-
-.header-details .header-detail {
-  display: flex;
-  align-items: center;
-  margin-right: 30px;
-}
-
-.header-details .header-detail:last-child {
-  margin-right: 0;
-}
-
-.header-details .header-detail i {
-  color: #4589CD;
-  margin-right: 15px;
-  font-size: 20px;
-}
-
-.header-details .header-detail-content p {
-  margin-bottom: 0;
-  color: #4589CD;
-  font-family: "BreeSerif";
-  font-size: 15px;
-  letter-spacing: .9px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 23px;
-  white-space: nowrap;
-}
-
-.header-details .header-detail-content span {
-  line-height: 23px;
-  white-space: nowrap;
-  font-family: "Open Sans";
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-}
-
 .nav-sections {
   background-color: transparent !important;
 }
@@ -15429,9 +15456,13 @@ readers do not read off random characters that represent icons */
   border-bottom-color: #9AD34D;
 }
 
+/*=================================
+    Banner Styles
+=================================*/
 .home-banner-wrapper {
   height: 570px;
   overflow: hidden;
+  margin-bottom: 50px !important;
 }
 
 .home-banner-wrapper .home-banner-slide {
@@ -15530,4 +15561,52 @@ readers do not read off random characters that represent icons */
 
 .home-banner-wrapper .slick-dots li.slick-active button::before {
   color: #fff;
+}
+
+/*=================================
+    Features Styles
+=================================*/
+.home-features-wrapper {
+  margin-bottom: 40px;
+}
+
+.home-features-wrapper h4 {
+  font-size: 23px;
+  font-family: "Open Sans";
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.home-features-wrapper .home-feature {
+  display: flex;
+  align-items: center;
+}
+
+.home-features-wrapper .home-feature-icon {
+  background-color: #9AD34D;
+  margin-right: 10px;
+  border-radius: 50%;
+  width: 67px;
+  height: 67px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-features-wrapper .home-feature-icon i {
+  color: #fff;
+  font-size: 30px;
+}
+
+.home-features-wrapper .home-feature-content h5 {
+  font-size: 24px;
+  font-family: #4589CD;
+  margin-bottom: 15px;
+  color: #4589CD;
+}
+
+.home-features-wrapper .home-feature-content p {
+  font-size: 15px;
+  font-family: "Open Sans";
+  margin-bottom: 0;
 }

@@ -1,6 +1,11 @@
+/*=================================
+    Banner Styles
+=================================*/
+
 .home-banner-wrapper {
     height: 570px;
     overflow: hidden;
+    margin-bottom: 50px !important;
 
     .home-banner-slide {
         position: relative;
@@ -111,6 +116,62 @@
                     }
                 }
             }
+        }
+    }
+}
+
+/*=================================
+    Features Styles
+=================================*/
+
+.home-features-wrapper {
+    margin-bottom: 40px;
+
+    h4 {
+        font-size: 23px;
+        font-family: $secondary-font-family;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .home-feature {
+        display: flex;
+        align-items: center;
+    }
+
+    .home-feature-icon {
+        background-color: $secondary-color;
+        margin-right: 10px;
+        border-radius: 50%;
+        width: 67px;
+        height: 67px;
+        padding: 21px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            color: #fff;
+            font-size: 30px;
+        }
+    }
+
+    .home-feature-content {
+        h5 {
+            font-size: 24px;
+            font-family: $primary-font-family;
+            margin-bottom: 15px;
+            color: $primary-color;
+            height: 28px;
+            overflow: hidden;
+        }
+
+        p {
+            font-size: 15px;
+            font-family: $secondary-font-family;
+            margin-bottom: 0;
+            height: 44px;
+            overflow: hidden;
         }
     }
 }
