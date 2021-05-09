@@ -1,0 +1,16 @@
+<?php
+    $storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt()
+?>
+<span data-action="toggle-nav" class="action nav-toggle"><span><?= $block->escapeHtml(__('Toggle Nav')) ?></span></span>
+<a
+    class="logo"
+    href="<?= $block->escapeUrl($block->getUrl('')) ?>"
+    title="<?= $block->escapeHtmlAttr($storeName) ?>"
+    aria-label="store logo">
+    <span>farmacia</span>
+    <span>
+        <span>bolli</span>
+        <span>1833</span>
+    </span>
+    <span>shop</span>
+</a>

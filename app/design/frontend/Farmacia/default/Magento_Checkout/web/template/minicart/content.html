@@ -1,0 +1,60 @@
+<div class="block-title">
+    <strong>
+        <span class="text" translate="'Anteprima carrello ('"/>
+        <span class="count" text="getCartParam('summary_count')"/>
+            <!-- ko if: (getCartLineItemsCount() === 1) -->
+                <span translate="'oggetto)'"/>
+            <!--/ko-->
+            <!-- ko if: (getCartLineItemsCount() > 1) -->
+                <span translate="'oggetti)'"/>
+            <!--/ko-->
+        </span>
+    </strong>
+</div>
+
+<div class="block-content">
+    <if args="getCartParam('summary_count')">
+        <strong class="subtitle" translate="'Recently added item(s)'"/>
+        <div data-action="scroll" class="minicart-items-wrapper">
+            <ol id="mini-cart" class="minicart-items" data-bind="foreach: { data: getCartItems(), as: 'item' }">
+                <each args="$parent.getRegion($parent.getItemRenderer(item.product_type))"
+                      render="{name: getTemplate(), data: item, afterRender: function() {$parents[1].initSidebar()}}"
+                />
+            </ol>
+        </div>
+    </if>
+
+    <if args="getCartParam('summary_count')">
+        <each args="getRegion('subtotalContainer')" render=""/>
+    </if>
+
+    <ifnot args="getCartParam('summary_count')">
+        <strong class="subtitle empty"
+                data-bind="visible: closeSidebar()"
+                translate="'You have no items in your shopping cart.'"
+        />
+        <if args="getCartParam('cart_empty_message')">
+            <p class="minicart empty text" text="getCartParam('cart_empty_message')"/>
+            <div class="actions">
+                <div class="secondary">
+                    <a class="action viewcart" data-bind="attr: {href: shoppingCartUrl}">
+                        <span translate="'VAI AL CARRELLO'"/>
+                    </a>
+                </div>
+            </div>
+        </if>
+    </ifnot>
+
+    <div class="actions" if="getCartParam('summary_count')">
+        <div class="secondary">
+            <a class="action viewcart" data-bind="attr: {href: shoppingCartUrl}">
+                <span translate="'VAI AL CARRELLO'"/>
+            </a>
+        </div>
+    </div>
+
+    <div id="minicart-widgets" class="minicart-widgets" if="getRegion('promotion').length">
+        <each args="getRegion('promotion')" render=""/>
+    </div>
+</div>
+<each args="getRegion('sign-in-popup')" render=""/>

@@ -1,0 +1,116 @@
+.home-banner-wrapper {
+    height: 570px;
+    overflow: hidden;
+
+    .home-banner-slide {
+        position: relative;
+        margin: 0 17px;
+
+        &.slide-01 {
+            background-color: #F7AA5E;
+
+            .slide-content {
+                width: 48%;
+            }
+
+            h3 {
+                span {
+                    display: inline-block;
+                    border: 2px dashed #fff;
+                    padding: 5px 20px;
+                    margin: 10px 0 10px 30px;
+                    color: $primary-color;
+                }
+            }
+        }
+
+        &.slide-02 {
+            .slide-content {
+                width: 29%;
+
+                h3 {
+                    margin-bottom: 50px;
+                }
+            }
+        }
+
+        &.slide-03 {
+            .slide-content {
+                width: 35.5%;
+
+                h3 {
+                    margin-bottom: 50px;
+                }
+            }
+        }
+
+        .slide-overlay {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .slide-content {
+        position: absolute;
+        top: 80px;
+        left: 90px;
+        font-family: $primary-font-family;
+
+        h2 {
+            line-height: 50px;
+            color: $primary-color;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            line-height: 35px;
+            color: #fff;
+            font-size: 25px;
+        }
+
+        a {
+            background-color: $primary-color;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            width: 240px;
+            letter-spacing: .88px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .slick-dots {
+        width: auto !important;
+        bottom: 45px !important;
+        left: 300px;
+
+        li {
+            margin: 0 1px !important;
+
+            button {
+                &::before {
+                    font-size: 10px;
+                    color: #fff;
+                }
+            }
+
+            &.slick-active {
+                button {
+                    &::before {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

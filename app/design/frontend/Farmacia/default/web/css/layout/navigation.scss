@@ -1,0 +1,43 @@
+.nav-sections {
+    background-color: transparent !important;
+}
+
+.navigation {
+    background-color: transparent !important;
+    border-bottom: 1px solid $border-color;
+    
+    .level0 {
+        &.parent > .level-top > .ui-menu-icon::after {
+            display: none !important;
+        }
+
+        &.active>.level-top, &.has-active>.level-top {
+            border: 0 !important;
+
+            span {
+                border-bottom: 3px solid $secondary-color;
+            }
+        }
+
+        > .level-top {
+            letter-spacing: .8px;
+            padding: 20px 10px 0 !important;
+            margin-bottom: 10px;
+            line-height: initial !important;
+
+            span {
+                display: block;
+                padding-bottom: 10px;
+                border-bottom: 3px solid transparent;
+            }
+        }
+
+        > .level-top:hover, > .level-top.ui-state-focus {
+            color: $primary-color;
+            
+            span {
+                border-bottom-color: $secondary-color;
+            }
+        }
+    }
+}

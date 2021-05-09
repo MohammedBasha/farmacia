@@ -1,0 +1,14 @@
+$primary-color: #4589CD;
+$secondary-color: #9AD34D;
+$small-color: #8C8C8C;
+$border-color: #D5D5D5;
+$primary-font-family: 'BreeSerif';
+$secondary-font-family: 'Open Sans';
+
+@font-face {
+    font-family: $primary-font-family;
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/BreeSerif-Regular.ttf') format('truetype');
+  }
+  

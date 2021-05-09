@@ -2,7 +2,15 @@
 
 @import "lib/fa/fontawesome.scss";
 @import "lib/fa/solid.scss";
+@import "lib/fa/regular.scss";
+@import "lib/fa/brands.scss";
+@import "lib/fa/light.scss";
 
 @import "lib/slick/slick.scss";
 @import "lib/slick/slick-theme.scss";
 
+@import "tools/variables.scss";
+
+@import "layout/header.scss";
+@import "layout/navigation.scss";
+@import "layout/home.scss";
