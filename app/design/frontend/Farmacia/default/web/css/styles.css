@@ -15588,6 +15588,7 @@ readers do not read off random characters that represent icons */
   border-radius: 50%;
   width: 67px;
   height: 67px;
+  padding: 21px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15600,13 +15601,17 @@ readers do not read off random characters that represent icons */
 
 .home-features-wrapper .home-feature-content h5 {
   font-size: 24px;
-  font-family: #4589CD;
+  font-family: "BreeSerif";
   margin-bottom: 15px;
   color: #4589CD;
+  height: 28px;
+  overflow: hidden;
 }
 
 .home-features-wrapper .home-feature-content p {
   font-size: 15px;
   font-family: "Open Sans";
   margin-bottom: 0;
+  height: 44px;
+  overflow: hidden;
 }
