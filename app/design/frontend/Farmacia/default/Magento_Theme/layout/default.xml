@@ -27,5 +27,8 @@
             <block name="header.details" template="Magento_Theme::header.details.phtml" after="top.search" />
             <move element="minicart" after="header.details" />
         </referenceContainer>
+
+        <!-- Moving the Newsletter Block to the home.blog.newsletter.row Section -->
+        <move element="form.subscribe" destination="home.blog.newsletter.row" after="home.blog" />
     </body>
 </page>
