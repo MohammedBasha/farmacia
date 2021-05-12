@@ -5,13 +5,16 @@
             <block name="home.banner" before="-" template="Magento_Theme::home.banner.phtml" />
             <block name="home.features" after="home.banner" template="Magento_Theme::home.features.phtml" />
             <block class="Magento\Catalog\Block\Product\ListProduct" name="home.products" after="home.features" template="Magento_Theme::home.products.phtml" />
-            <!-- <block name="home.blocks" after="home.products" template="Magento_Theme::home.blocks.phtml" /> -->
-            <!-- <container name="home.blog.newsletter" after="home.blocks" htmlTag="div" htmlClass="home-blog-newsletter">
-                <block name="home.blog" before="-" template="Magento_Theme::home.blog.phtml" />
-            </container> -->
-            <!-- <block name="home.brands" after="home.blog.newsletter" template="Magento_Theme::home.brands.phtml" /> -->
-            <!-- <block name="home.forum" after="home.brands" template="Magento_Theme::home.forum.phtml" /> -->
-            <!-- <block name="home.reviews" after="home.forum" template="Magento_Theme::home.reviews.phtml" /> -->
+            <block name="home.blocks" after="home.products" template="Magento_Theme::home.blocks.phtml" />
+            <container name="home.blog.newsletter.wrapper" after="home.blocks" htmlTag="div" htmlClass="home-blog-newsletter-wrapper">
+                <container name="home.blog.newsletter.container" htmlTag="div" htmlClass="container">
+                    <container name="home.blog.newsletter.row" htmlTag="div" htmlClass="row">
+                        <block name="home.blog" before="-" template="Magento_Theme::home.blog.phtml" />
+                    </container>
+                </container>
+            </container>
+            <block name="home.brands" after="home.blog.newsletter.wrapper" template="Magento_Theme::home.brands.phtml" />
+            <!-- <block name="home.reviews" after="home.brands" template="Magento_Theme::home.reviews.phtml" /> -->
         </referenceContainer>
     </body>
 </page>

@@ -1,0 +1,46 @@
+<?php
+/** @var \Magento\Newsletter\Block\Subscribe $block */
+?>
+<div class="col-12 col-sm-6 col-lg-4">
+    <div class="block newsletter">
+        <div class="title"><strong><?= $block->escapeHtml(__('Newsletter')) ?></strong></div>
+        <p>Iscriviti oggi per avere la spedizione gratuita sul tuo primo ordine (valore 6€)</p>
+        <div class="content">
+            <form class="form subscribe"
+                novalidate
+                action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+                method="post"
+                data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+                id="newsletter-validate-detail">
+                <div class="field newsletter">
+                    <div class="control">
+                        <label for="newsletter">
+                            <span class="label">
+                                <?= $block->escapeHtml(__('Indirizzo email ')) ?>
+                            </span>
+                            <input name="email" type="email" id="newsletter"
+                                placeholder=""
+                                data-mage-init='{"mage/trim-input":{}}'
+                                data-validate="{required:true, 'validate-email':true}"
+                            />
+                        </label>
+                    </div>
+                    <div class="checkbox-control">
+                        <input type="checkbox" id="checkbox-privacy" name="privacy" value="yes" class="checkbox-privacy mage-error" aria-invalid="true" data-validate="{required:true}" aria-describedby="privacy-error" />
+                        <label for="checkbox-privacy">
+                            Accetto <a href="#" target="_blank">la privacy</a>
+                        </label>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="action subscribe primary"
+                            title="<?= $block->escapeHtmlAttr(__('ISCRIVITI')) ?>"
+                            type="submit"
+                            aria-label="Subscribe">
+                        <span><?= $block->escapeHtml(__('ISCRIVITI')) ?></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
