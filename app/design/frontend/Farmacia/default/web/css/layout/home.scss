@@ -87,9 +87,11 @@
             text-decoration: none;
             color: #fff;
             font-size: 14px;
+            transition: background-color .3s ease-in-out;
 
             &:hover {
                 text-decoration: none;
+                background-color: $secondary-color;
             }
         }
     }
@@ -299,9 +301,11 @@
         font-weight: 700;
         margin-top: auto;
         border-radius: 20px;
+        transition: background-color .3s ease-in-out;
 
         &:hover {
             text-decoration: none;
+            background-color: $secondary-color;
         }
     }
 
@@ -425,10 +429,11 @@
         border-radius: 20px;
         width: 180px;
         text-align: center;
+        transition: background-color .3s ease-in-out;
 
         &:hover {
             color: #fff;
-            background-color: $primary-color;
+            background-color: $secondary-color;
             text-decoration: none;
         }
     }

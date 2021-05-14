@@ -30,5 +30,12 @@
 
         <!-- Moving the Newsletter Block to the home.blog.newsletter.row Section -->
         <move element="form.subscribe" destination="home.blog.newsletter.row" after="home.blog" />
+
+        <referenceContainer name="footer">
+            <block name="footer.details" template="Magento_Theme::footer.details.phtml" />
+        </referenceContainer>
+
+        <!-- Removing the Copyrights section -->
+        <referenceBlock name="copyright" remove="true" />
     </body>
 </page>
