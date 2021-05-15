@@ -15437,37 +15437,50 @@ body ul, body ol, body li {
   border-bottom: 1px solid #D5D5D5;
 }
 
-.navigation .level0.parent > .level-top > .ui-menu-icon::after {
-  display: none !important;
+.menu > ul > li {
+  background-color: transparent;
 }
 
-.navigation .level0.active > .level-top, .navigation .level0.has-active > .level-top {
-  border: 0 !important;
+.menu > ul > li:hover {
+  background-color: transparent;
 }
 
-.navigation .level0.active > .level-top span, .navigation .level0.has-active > .level-top span {
-  border-bottom: 3px solid #9AD34D;
+.menu > ul > li:hover > a span {
+  border-bottom: 1px solid #9AD34D;
 }
 
-.navigation .level0 > .level-top {
-  letter-spacing: .8px;
-  padding: 20px 10px 0 !important;
-  margin-bottom: 10px;
-  line-height: initial !important;
+.menu > ul > li > a {
+  color: #212121;
+  padding: 6px 18px;
 }
 
-.navigation .level0 > .level-top span {
+.menu > ul > li > a span {
   display: block;
-  padding-bottom: 10px;
+  padding: 6px 0;
   border-bottom: 3px solid transparent;
 }
 
-.navigation .level0 > .level-top:hover, .navigation .level0 > .level-top.ui-state-focus {
-  color: #4589CD;
+.menu > ul > li > ul {
+  padding: 0;
+  background-color: #D5D5D5;
 }
 
-.navigation .level0 > .level-top:hover span, .navigation .level0 > .level-top.ui-state-focus span {
-  border-bottom-color: #9AD34D;
+.menu > ul > li > ul > li {
+  border-right: 2px solid #fff;
+  padding: 20px;
+}
+
+.menu > ul > li > ul > li > a {
+  color: #4589CD;
+  border-bottom: 0;
+  font-size: 14px;
+  font-weight: bold !important;
+  font-family: "BreeSerif";
+}
+
+.menu > ul > li > ul > li > ul > li {
+  padding: 3px 0;
+  font-size: .9em;
 }
 
 /*=================================
