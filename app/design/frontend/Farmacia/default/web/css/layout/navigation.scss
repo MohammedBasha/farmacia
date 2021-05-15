@@ -1,3 +1,4 @@
+
 .nav-sections {
     background-color: transparent !important;
 }
@@ -5,38 +6,57 @@
 .navigation {
     background-color: transparent !important;
     border-bottom: 1px solid $border-color;
-    
-    .level0 {
-        &.parent > .level-top > .ui-menu-icon::after {
-            display: none !important;
-        }
+}
 
-        &.active>.level-top, &.has-active>.level-top {
-            border: 0 !important;
+.menu {
+    >ul {
+        >li {
+            background-color: transparent;
 
-            span {
-                border-bottom: 3px solid $secondary-color;
+            &:hover {
+                background-color: transparent;
+
+                > a {
+                    span {
+                        border-bottom: 1px solid $secondary-color;
+                    }
+                }
             }
-        }
 
-        > .level-top {
-            letter-spacing: .8px;
-            padding: 20px 10px 0 !important;
-            margin-bottom: 10px;
-            line-height: initial !important;
+            > a {
+                color: #212121;
+                padding: 6px 18px;
 
-            span {
-                display: block;
-                padding-bottom: 10px;
-                border-bottom: 3px solid transparent;
+                span {
+                    display: block;
+                    padding: 6px 0;
+                    border-bottom: 3px solid transparent;
+                }
             }
-        }
-
-        > .level-top:hover, > .level-top.ui-state-focus {
-            color: $primary-color;
             
-            span {
-                border-bottom-color: $secondary-color;
+            >ul {
+                padding: 0;
+                background-color: #D5D5D5;
+
+                >li {
+                    border-right: 2px solid #fff;
+                    padding: 20px;
+                    
+                    >a {
+                        color: $primary-color;
+                        border-bottom: 0;
+                        font-size: 14px;
+                        font-weight: bold !important;
+                        font-family: $primary-font-family;
+                    }
+
+                    >ul {
+                        >li {
+                            padding: 3px 0;
+                            font-size: .9em;
+                        }
+                    }
+                }
             }
         }
     }
