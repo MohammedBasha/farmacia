@@ -70,3 +70,26 @@
         }
     }
 }
+
+/* Responsive Styles */
+.nav-toggle {
+    order: 0;
+    position: static;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    margin-left: 5px;
+
+    &:hover {
+        &::before {
+            color: $primary-color;
+        }
+    }
+
+    &::before {
+        color: $primary-color;
+        font-size: 25px;
+    }
+}
