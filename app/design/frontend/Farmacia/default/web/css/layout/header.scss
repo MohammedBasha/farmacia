@@ -113,6 +113,37 @@ body {
     border-bottom: 1px solid $border-color;
     max-width: 100% !important;
     width: 100% !important;
+    transition: all .3s ease-in-out;
+
+    &._sticky {
+        position: fixed;
+        z-index: 5;
+        top: 0 !important;
+        background-color: #fff;
+        transition: all .3s ease-in-out;
+
+        .sticky-nav-toggle {
+            display: flex;
+        }
+    }
+
+    .sticky-nav-toggle {
+        display: none;
+        order: 5;
+        height: 100px;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        border-left: 1px solid $border-color;
+        
+        i {
+            cursor: pointer;
+            color: $primary-color;
+            font-size: 20px;
+            line-height: 20px;
+            margin-top: 10px;
+        }
+    }
 }
 
 .logo {
@@ -337,12 +368,20 @@ body {
         position: relative;
 
         &::before {
-            color: $primary-color;
+            color: $primary-color !important;
         }
 
         &:hover {
             &::before {
-                color: $primary-color;
+                color: $primary-color !important;
+            }
+        }
+
+        &.active {
+            &:hover {
+                &::before {
+                    color: $primary-color !important;
+                }
             }
         }
 

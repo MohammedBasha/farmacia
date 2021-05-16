@@ -15079,6 +15079,37 @@ body ul, body ol, body li {
   border-bottom: 1px solid #D5D5D5;
   max-width: 100% !important;
   width: 100% !important;
+  transition: all .3s ease-in-out;
+}
+
+.header.content._sticky {
+  position: fixed;
+  z-index: 5;
+  top: 0 !important;
+  background-color: #fff;
+  transition: all .3s ease-in-out;
+}
+
+.header.content._sticky .sticky-nav-toggle {
+  display: flex;
+}
+
+.header.content .sticky-nav-toggle {
+  display: none;
+  order: 5;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-left: 1px solid #D5D5D5;
+}
+
+.header.content .sticky-nav-toggle i {
+  cursor: pointer;
+  color: #4589CD;
+  font-size: 20px;
+  line-height: 20px;
+  margin-top: 10px;
 }
 
 .logo {
@@ -15284,11 +15315,15 @@ body ul, body ol, body li {
 }
 
 .minicart-wrapper .action.showcart::before {
-  color: #4589CD;
+  color: #4589CD !important;
 }
 
 .minicart-wrapper .action.showcart:hover::before {
-  color: #4589CD;
+  color: #4589CD !important;
+}
+
+.minicart-wrapper .action.showcart.active:hover::before {
+  color: #4589CD !important;
 }
 
 .minicart-wrapper .action.showcart .counter.qty {
@@ -15430,6 +15465,15 @@ body ul, body ol, body li {
 
 .nav-sections {
   background-color: transparent !important;
+  transition: all .3s ease-in-out;
+}
+
+.nav-sections._sticky {
+  position: fixed;
+  z-index: 4;
+  background-color: #fff !important;
+  width: 100%;
+  transition: all .3s ease-in-out;
 }
 
 .navigation {
@@ -15446,7 +15490,7 @@ body ul, body ol, body li {
 }
 
 .menu > ul > li:hover > a span {
-  border-bottom: 1px solid #9AD34D;
+  border-bottom-color: #9AD34D;
 }
 
 .menu > ul > li > a {
@@ -15457,7 +15501,7 @@ body ul, body ol, body li {
 .menu > ul > li > a span {
   display: block;
   padding: 6px 0;
-  border-bottom: 3px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 
 .menu > ul > li > ul {
@@ -15801,7 +15845,7 @@ body ul, body ol, body li {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: 3;
   font-size: 13px;
   font-family: "Open Sans";
   padding: 7px 10px;
@@ -16151,6 +16195,7 @@ body ul, body ol, body li {
   border-right: 1px solid #D5D5D5;
   display: flex;
   justify-content: space-between;
+  padding: 50px 50px 50px 0;
 }
 
 .footer-details-top-right {

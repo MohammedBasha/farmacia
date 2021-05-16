@@ -1,6 +1,15 @@
 
 .nav-sections {
     background-color: transparent !important;
+    transition: all .3s ease-in-out;
+
+    &._sticky {
+        position: fixed;
+        z-index: 4;
+        background-color: #fff !important;
+        width: 100%;
+        transition: all .3s ease-in-out;
+    }
 }
 
 .navigation {
@@ -18,7 +27,7 @@
 
                 > a {
                     span {
-                        border-bottom: 1px solid $secondary-color;
+                        border-bottom-color: $secondary-color;
                     }
                 }
             }
@@ -30,7 +39,7 @@
                 span {
                     display: block;
                     padding: 6px 0;
-                    border-bottom: 3px solid transparent;
+                    border-bottom: 2px solid transparent;
                 }
             }
             
