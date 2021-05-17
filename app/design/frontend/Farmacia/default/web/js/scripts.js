@@ -59,10 +59,9 @@ require(['jquery', "slick", "mage/mage"], function($){
                     breakpoint: 767,
                     settings: {
                         slidesToShow: 1,
-                        slidesToScroll: 1,
                         infinite: true,
                         dots: true,
-                        centerPadding: '120px'
+                        centerPadding: '0'
                     }
                 }
             ]

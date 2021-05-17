@@ -651,3 +651,153 @@
         }
     }
 }
+
+/* Responsive Styles */
+
+@media (max-width: 767px) {
+    .home-banner-wrapper {
+        height: auto;
+        overflow: visible;
+
+        .home-banner-slide {
+            margin: 0;
+
+            &.slide-01 {
+                .slide-content {
+                    width: 80%;
+
+                    h3 span {
+                        margin: 5px 0 5px 30px;
+                        border: 1px dashed #fff;
+                        padding: 3px 15px;
+                    }
+                }
+            }
+
+            &.slide-02, &.slide-03 {
+                .slide-content {
+                    width: 45%;
+                }
+            }
+        }
+
+        .slick-dots {
+            left: 0;
+            right: 0;
+            bottom: -27px !important;
+
+            li {
+                &.slick-active{
+                    button {
+                        &::before {
+                            color: grey;
+                        }
+                    }
+                }
+
+                button {
+                    &::before {
+                        color: grey;
+                    }
+                }
+            }
+        }
+
+        .slide-content {
+            left: 20px;
+            top: 50px;
+
+            h2 {
+                line-height: 15px;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            h3 {
+                line-height: 17px;
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+
+            a {
+                height: 30px;
+                width: 120px;
+                font-size: 11px;
+            }
+        }
+    }
+
+    .home-blocks-wrapper {
+        margin-bottom: 30px;
+    }
+
+    .home-block {
+        margin-bottom: 20px;
+    }
+
+    .home-blog-wrapper {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .home-blog-content {
+        border-right: 1px solid $border-color;
+        border-bottom: 0;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .home-blog-img {
+        border-radius: 0 0 5px 5px;
+    }
+
+    .home-brands {
+        .forum {
+            flex-direction: column;
+            margin-bottom: 20px;
+
+            .forum-1 {
+                flex-direction: column;
+                position: relative;
+                margin-bottom: 20px;
+
+                h4 {
+                    order: 2;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    padding: 20px 80px;
+                    font-size: 20px;
+                    text-align: center;
+                }
+
+                img {
+                    order: 1;
+                    flex-basis: 100%;
+                    width: 100%;
+                }
+            }
+
+            .forum-2 {
+                padding: 20px 30px;
+
+                h4 {
+                    font-size: 20px;
+                    order: 1;
+                    flex-basis: 75%;
+                }
+
+                h6 {
+                    order: 3;
+                    flex-basis: 100%;
+                    font-size: 14px;
+                }
+
+                .header-top-social-right {
+                    order: 2;
+                    flex-basis: 25%;
+                }
+            }
+        }
+    }
+}
