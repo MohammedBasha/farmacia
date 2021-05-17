@@ -93,3 +93,88 @@
         font-size: 25px;
     }
 }
+
+@media (max-width: 767px) {
+    .nav-sections-items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-item-title.nav-sections-item-title {
+        display: none;
+    }
+
+    .nav-sections-item-content {
+        padding: 0 !important;
+    }
+
+    .section-item-content.nav-sections-item-content {
+        display: block !important;
+        margin-top: 0;
+        margin-left: 0;
+
+        &#store\.menu {
+            order: 2;
+        }
+
+        &#store\.links {
+            order: 1;
+        }
+    }
+    
+    .nav-sections {
+        .header.links {
+            li {
+                &.compare, &.welcome {
+                    display: none;
+                }
+
+                > a {
+                    &.my-account-link {
+                        font-size: 13px;
+                        background-color: $primary-color;
+                        text-align: center;
+                        padding: 14px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .navigation {
+        background-color: #D5D5D5 !important;
+
+        .submenu {
+            &:not(:first-child) {
+                >li {
+                    >a {
+                        padding-left: 30px;
+                    }
+                }
+            }
+
+            i {
+                font-weight: bold;
+                font-size: 10px;
+                position: relative;
+                left: -10px;
+            }
+        }
+
+        .level0 {
+            border-top: 0;
+            padding: 0 15px;
+
+            &.first {
+                a {
+                    border-top: 0;
+                }
+            }
+        }
+
+        a, a:hover {
+            color: $primary-color;
+            border-top: 2px solid #fff;
+        }
+    }
+}

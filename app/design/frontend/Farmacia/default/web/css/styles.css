@@ -15642,6 +15642,62 @@ body ul, body ol, body li {
   font-size: 25px;
 }
 
+@media (max-width: 767px) {
+  .nav-sections-items {
+    display: flex;
+    flex-direction: column;
+  }
+  .section-item-title.nav-sections-item-title {
+    display: none;
+  }
+  .nav-sections-item-content {
+    padding: 0 !important;
+  }
+  .section-item-content.nav-sections-item-content {
+    display: block !important;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  .section-item-content.nav-sections-item-content#store\.menu {
+    order: 2;
+  }
+  .section-item-content.nav-sections-item-content#store\.links {
+    order: 1;
+  }
+  .nav-sections .header.links li.compare, .nav-sections .header.links li.welcome {
+    display: none;
+  }
+  .nav-sections .header.links li > a.my-account-link {
+    font-size: 13px;
+    background-color: #4589CD;
+    text-align: center;
+    padding: 14px 0;
+  }
+  .navigation {
+    background-color: #D5D5D5 !important;
+  }
+  .navigation .submenu:not(:first-child) > li > a {
+    padding-left: 30px;
+  }
+  .navigation .submenu i {
+    font-weight: bold;
+    font-size: 10px;
+    position: relative;
+    left: -10px;
+  }
+  .navigation .level0 {
+    border-top: 0;
+    padding: 0 15px;
+  }
+  .navigation .level0.first a {
+    border-top: 0;
+  }
+  .navigation a, .navigation a:hover {
+    color: #4589CD;
+    border-top: 2px solid #fff;
+  }
+}
+
 /*=================================
     Banner Styles
 =================================*/

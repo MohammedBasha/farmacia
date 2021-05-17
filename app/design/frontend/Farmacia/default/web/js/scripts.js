@@ -1,8 +1,54 @@
-require(['jquery', "slick", "mage/mage"], function($){
+require(['jquery', "jquery/ui", "slick", "mage/mage"], function($){
     $(document).ready( function() {
 
         // Adding title attribute to the my-acount link
         $(".my-account-link").attr("title","accedi/registrati");
+
+        // Manage the Navigation Menu sub items collapse in the Mobile view
+        if ($(window).width() <= 767) {
+
+            // Adding the All Category link in each submenu
+            $('.navigation li.level0 li.parent > a > span').each(function() {
+                var linkHref = $(this).parent().attr('href'),
+                    linkValue = $(this).text();
+
+                $(this).parent().parent().find('ul:first').prepend('<li><a href="'+linkHref+'" title="'+linkValue+'">'+ 'All '+linkValue +'</a></li>');
+            });
+
+            // Adding the Plus Icon
+            $('li.level0 li.parent > a').prepend('<i class="fas fa-plus"></i>');
+
+            // Stopping he Clicking default behavior on link
+            $('.navigation li.level0 li.parent > a').click(function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $(this).children("i").trigger("click");
+                return false;
+            });
+
+            // The Collapsing Function
+            $('.navigation li.level0 li.parent > a i').click(function() {
+                if ($(this).parent().parent().siblings('.ui-menu-item').hasClass('lichild_clicked')) {
+                    $(this).parent().parent().siblings('.lichild_clicked').children('ul').slideUp();
+                    $(this).parent().parent().siblings('.lichild_clicked').children('a').children('i').removeClass('fa-plus').addClass('fa-minus');
+                    $(this).parent().parent().siblings('.lichild_clicked').removeClass("lichild_clicked").children('a').children('i').removeClass('fa-minus').addClass('fa-plus');
+                }
+             
+                if ($(this).hasClass('fa-minus')) {
+                    $(this).parent().parent().find('ul:first').slideUp();
+                    $(this).parent().parent().removeClass("lichild_clicked");
+                    $(this).removeClass('fa-minus');
+                    $(this).addClass('fa-plus');
+                } else {
+                    $(this).parent().parent().find('ul:first').slideDown();
+                    $(this).addClass('fa-minus');
+                    $(this).parent().parent().addClass("lichild_clicked");
+                    $(this).removeClass('fa-plus');
+                }
+                return false;
+             });
+            
+        }
 
         // Initializing the Sticky widget to the header
         if ($(window).width() >= 767) {
