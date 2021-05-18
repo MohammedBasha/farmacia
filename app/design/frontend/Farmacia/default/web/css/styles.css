@@ -14801,7 +14801,7 @@ readers do not read off random characters that represent icons */
 
 /* Slider */
 .slick-loading .slick-list {
-  background: #fff url("./ajax-loader.gif") center center no-repeat;
+  background: #fff url("./../images/ajax-loader.gif") center center no-repeat;
 }
 
 /* Icons */
@@ -16566,4 +16566,90 @@ body ul, body ol, body li {
   flex-basis: auto;
   margin-top: 5px;
   font-size: 11px;
+}
+
+@media (max-width: 767px) {
+  .footer-content-mobile {
+    background-color: #D5D5D5;
+    color: #fff;
+    padding: 30px 15px 50px;
+  }
+  .footer-content-mobile div[data-role=content] {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #fff;
+  }
+  .footer-content-mobile div[data-role=content] li a {
+    color: #212121;
+    line-height: 25px;
+    font-family: "Open Sans";
+    font-size: 13px;
+  }
+  .footer.content {
+    margin-bottom: 0;
+  }
+  .footer.content h6 {
+    padding-bottom: 20px !important;
+    height: auto;
+    border-bottom: 2px solid #fff;
+    cursor: pointer;
+  }
+  .footer p {
+    margin-bottom: 25px;
+    font-size: 13px;
+    font-family: "Open Sans";
+    color: #212121;
+  }
+  .footer p a {
+    color: #212121;
+  }
+  .footer p a:last-child {
+    color: #4589CD;
+    font-weight: bold;
+  }
+  .header-top-social-right a {
+    color: #4589CD;
+  }
+  .header-top-social-right a:hover {
+    color: #4589CD;
+  }
+  .footer-logos-1-images,
+  .footer-logos-2-images {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .footer-logos-1-images img,
+  .footer-logos-2-images img {
+    margin-right: 15px;
+  }
+  .footer-logos-1-images img:last-child,
+  .footer-logos-2-images img:last-child {
+    margin-right: 0;
+  }
+  .footer-logos-1-images span,
+  .footer-logos-2-images span {
+    color: #212121;
+  }
+  .footer-details-top-left {
+    padding: 0 !important;
+  }
+  .footer-company-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .footer-company-details > * {
+    flex-basis: 45% !important;
+    margin-bottom: 20px !important;
+  }
+  .footer-company-details p {
+    font-size: 15px;
+  }
+  .footer-company-details .header-top-social-right {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .footer-company-details .header-top-social-right a {
+    font-size: 25px;
+  }
 }

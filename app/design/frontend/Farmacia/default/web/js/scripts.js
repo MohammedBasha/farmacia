@@ -1,4 +1,9 @@
-require(['jquery', "jquery/ui", "slick", "mage/mage"], function($){
+require(["jquery",
+        "jquery/ui",
+        "slick",
+        "mage/mage",
+        "accordion"
+    ], function($){
     $(document).ready( function() {
 
         // Adding title attribute to the my-acount link
@@ -113,5 +118,7 @@ require(['jquery', "jquery/ui", "slick", "mage/mage"], function($){
             ]
         });
 
+        // Initializing the Accordion Widget in the Footer Mobile
+        $(".footer-content-mobile").accordion();
     });
 });
