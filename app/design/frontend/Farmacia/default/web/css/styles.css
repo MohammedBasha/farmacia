@@ -16120,6 +16120,7 @@ body ul, body ol, body li {
 
 .block.newsletter {
   width: 100% !important;
+  max-width: 100% !important;
   padding: 45px;
   background-color: #4589CD;
   color: #fff;
