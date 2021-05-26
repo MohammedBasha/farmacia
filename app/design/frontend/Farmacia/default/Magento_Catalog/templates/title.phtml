@@ -1,0 +1,17 @@
+<?php
+/**
+ * Category view template
+ *
+ * @var $block \Magento\Catalog\Block\Category\View
+ */
+?>
+<?php
+    $_helper    = $this->helper(Magento\Catalog\Helper\Output::class);
+    $_category  = $block->getCurrentCategory();
+?>
+
+<div class="page-title-wrapper">
+    <h1 class="page-title">
+        <?= $_category->getName(); ?>
+    </h1>
+</div>

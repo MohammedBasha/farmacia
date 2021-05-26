@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.top">
+            <container name="page.top.container" htmlTag="div" htmlClass="container">
+                <container name="page.top.row" htmlTag="div" htmlClass="row" />
+            </container>
+        </referenceContainer>
+        <move element="breadcrumbs" destination="page.top.row" before="-" />
+
+        <referenceContainer name="main">
+            <container name="sidebar.products.container" htmlTag="div" htmlClass="sidebar-products-container">
+                <container name="body.top.container" htmlTag="div" htmlClass="container">
+                    <container name="body.top.row" htmlTag="div" htmlClass="row">
+                        
+                        <container name="mobile.category.details" htmlTag="div" htmlClass="mobile-category-details d-flex d-sm-none flex-column" before="-">
+                            <block class="Magento\Catalog\Block\Category\View" name="mobile.page.main.title" template="Magento_Catalog::title.phtml" />
+                            <block class="Magento\Catalog\Block\Category\View" name="mobile.category.image" template="Magento_Catalog::category/image.phtml" />
+                        </container>
+
+                        <container name="category.details.custom" htmlTag="div" htmlClass="category-details-custom" after="catalog.leftnav">
+                            <container name="category.details.name.desc" htmlTag="div" htmlClass="category-details-name-desc" />
+                        </container>
+
+                        <block name="home.brands" template="Magento_Theme::home.brands.phtml" after="category.cms" />
+
+                    </container>
+                </container>
+            </container>
+        </referenceContainer>
+
+        <move element="catalog.leftnav" destination="body.top.row" after="mobile.category.details" />
+        <move element="category.products" destination="category.details.custom" after="-" />
+
+        <move element="page.main.title" destination="category.details.name.desc" before="-" />
+        <move element="category.description" destination="category.details.name.desc" after="page.main.title" />
+        <move element="category.image" destination="category.details.custom" before="category.details.name.desc" />
+        <move element="category.cms" destination="body.top.row" after="category.details.custom" />
+
+        <referenceBlock name="catalog.compare.sidebar" remove="true" />
+        <referenceBlock name="sidebar.additional" remove="true" />
+
+    </body>
+</page>

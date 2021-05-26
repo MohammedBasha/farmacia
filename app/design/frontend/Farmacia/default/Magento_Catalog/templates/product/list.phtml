@@ -1,0 +1,101 @@
+<?php
+use Magento\Framework\App\Action\Action;
+?>
+<?php
+// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+
+/**
+ * Product list template
+ *
+ * @var $block \Magento\Catalog\Block\Product\ListProduct
+ */
+?>
+<?php
+$_productCollection = $block->getLoadedProductCollection();
+$_helper = $this->helper(Magento\Catalog\Helper\Output::class);
+?>
+<?php if (!$_productCollection->count()) :?>
+    <div class="message info empty"><div><?= $block->escapeHtml(__('We can\'t find products matching the selection.')) ?></div></div>
+<?php else :?>
+    <?= $block->getToolbarHtml() ?>
+    <?= $block->getAdditionalHtml() ?>
+    <?php
+    if ($block->getMode() == 'grid') {
+        $viewMode = 'grid';
+        $imageDisplayArea = 'category_page_grid';
+        $showDescription = false;
+        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+    } else {
+        $viewMode = 'list';
+        $imageDisplayArea = 'category_page_list';
+        $showDescription = true;
+        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
+    }
+    /**
+     * Position for actions regarding image size changing in vde if needed
+     */
+    $pos = $block->getPositioned();
+    ?>
+    <div class="products wrapper <?= /* @noEscape */ $viewMode ?> products-<?= /* @noEscape */ $viewMode ?>">
+        <ol class="home-products-list">
+            <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
+            <?php foreach ($_productCollection as $_product) :?>
+            <li class="home-product">
+                <div class="home-product-info" data-container="product-<?= /* @noEscape */ $viewMode ?>">
+                    <?php
+                        if ($_product->getPrice()>$_product->getFinalPrice()):
+                            echo '<div class="salebox">-' . number_format((float)(1 - $_product->getSpecialPrice()/$_product->getPrice()) * 100, 0, '.', ''). '%</div>';
+                        endif;
+                    ?>
+                    <?php
+                    $productImage = $block->getImage($_product, $imageDisplayArea);
+                    if ($pos != null) {
+                        $position = ' style="left:' . $productImage->getWidth() . 'px;'
+                            . 'top:' . $productImage->getHeight() . 'px;"';
+                    }
+                    ?>
+                    <?php // Product Image ?>
+                    <a href="<?= $block->escapeUrl($_product->getProductUrl()) ?>"
+                       class="home-product-photo"
+                       tabindex="-1">
+                        <?= $productImage->toHtml() ?>
+                    </a>
+                    <div class="home-product-details">
+                        <?php
+                            $_productNameStripped = $block->stripTags($_product->getName(), null, true);
+                        ?>
+                        <span class="home-product-name">
+                            <a class="home-product-link"
+                               href="<?= $block->escapeUrl($_product->getProductUrl()) ?>">
+                                <?= /* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
+                            </a>
+                        </span>
+                        <div class="home-product-description">
+                            <?php 
+                                if ($showDescription) :
+                                    $productDesc = $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description');
+                                    echo strlen($productDesc) > 40 ? substr($productDesc ,0,40)."..." : $productDesc;
+                                endif; 
+                            ?>
+                        </div>
+                        <?= /* @noEscape */ $block->getProductPrice($_product) ?>
+                        <a class="button-details" href="<?= $block->escapeUrl($_product->getProductUrl()) ?>" title="DETTAGLI E ACQUISTO"><?= __('DETTAGLI E ACQUISTO')?></a>
+                    </div>
+                </div>
+            </li>
+            <?php endforeach; ?>
+        </ol>
+    </div>
+    <?= $block->getToolbarHtml() ?>
+    <?php if (!$block->isRedirectToCartEnabled()) :?>
+        <script type="text/x-magento-init">
+        {
+            "[data-role=tocart-form], .form.map.checkout": {
+                "catalogAddToCart": {
+                    "product_sku": "<?= $block->escapeJs($_product->getSku()) ?>"
+                }
+            }
+        }
+        </script>
+    <?php endif; ?>
+<?php endif; ?>
