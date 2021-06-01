@@ -1,0 +1,24 @@
+<?php
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_product = $block->getProduct();
+?>
+
+<div class="product-full-desc-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="heading-wrapper">
+                    <span>Descrizione</span>
+                </div>
+                <div class="product-description-wrapper product-description-short">
+                    <div class="product-description"><?= $_product->getDescription(); ?></div>
+                    <a href="#" title="<?= __('espandi'); ?>">
+                        <span><?= __('espandi'); ?></span>
+                        <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-chevron-up"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

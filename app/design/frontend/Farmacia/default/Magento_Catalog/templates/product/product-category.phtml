@@ -1,0 +1,16 @@
+<?php 
+   $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+   $category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');
+?>
+
+<div class="product-sub-info-wrapper">
+    <div class="product-category-wrapper">
+        <span>Marchio:</span>
+        <a href="<?= $category->getUrl(); ?>" title="<?= $category->getName(); ?>"><?= $category->getName(); ?></a>
+    </div>
+
+    <div class="product-quality-wrapper">
+        <img src="<?php echo $this->getViewFileUrl('images/senza-glutine.png'); ?>" alt="senza-glutine" />
+        <img src="<?php echo $this->getViewFileUrl('images/senza-lattosio.png'); ?>" alt="senza-lattosio" />
+    </div>
+</div>

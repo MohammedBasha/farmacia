@@ -1,0 +1,16 @@
+<?php /* @var $block \Magento\Catalog\Block\Product\View\AbstractView */?>
+<?php $_product = $block->getProduct() ?>
+
+<?php if ($block->displayProductStockStatus()) :?>
+    <?php if ($_product->isAvailable()) :?>
+        <div class="stock available" title="<?= $block->escapeHtmlAttr(__('Disponibilità')) ?>">
+            <i class="fas fa-check-circle"></i>
+            <span><?= $block->escapeHtml(__('Disponibile')) ?></span>
+        </div>
+    <?php else :?>
+        <div class="stock unavailable" title="<?= $block->escapeHtmlAttr(__('Disponibilità')) ?>">
+            <i class="fas fa-minus-circle"></i>
+            <span><?= $block->escapeHtml(__('Non disponibile')) ?></span>
+        </div>
+    <?php endif; ?>
+<?php endif; ?>

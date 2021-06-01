@@ -1,0 +1,24 @@
+<?php
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_product = $block->getProduct();
+?>
+
+<div class="product-short-desc-wrapper">
+
+    <div class="product-description-wrapper product-description-short">
+        <div class="product-description"><?= $_product->getDescription(); ?></div>
+        <a href="#" title="<?= __('descrizione completa'); ?>">
+            <span><?= __('descrizione completa'); ?></span>
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <div class="product-order-wrapper">
+        <p>
+            <span><?= __('SPEDIZIONE IN 24/48H'); ?></span>
+            <span><?= __('gratuita per ordini superiori a 49€'); ?></span>
+        </p>
+    </div>
+
+</div>

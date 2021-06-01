@@ -10,11 +10,14 @@ $priceModel = $block->getPriceType('regular_price');
 $finalPriceModel = $block->getPriceType('final_price');
 $idSuffix = $block->getIdSuffix() ? $block->getIdSuffix() : '';
 $schema = ($block->getZone() == 'item_view') ? true : false;
+
+$finalPrice = $finalPriceModel->getAmount();
+$oldPrice = $priceModel->getAmount();
 ?>
 <?php if ($block->hasSpecialPrice()) :?>
     <span class="special-price">
         <?= /* @noEscape */ $block->renderAmount($finalPriceModel->getAmount(), [
-            'display_label'     => __(''),
+            'display_label'     => __('Special Price'),
             'price_id'          => $block->getPriceId('product-price-' . $idSuffix),
             'price_type'        => 'finalPrice',
             'include_container' => true,
@@ -23,7 +26,7 @@ $schema = ($block->getZone() == 'item_view') ? true : false;
     </span>
     <span class="old-price">
         <?= /* @noEscape */ $block->renderAmount($priceModel->getAmount(), [
-            'display_label'     => __(''),
+            'display_label'     => __('prezzo di listino'),
             'price_id'          => $block->getPriceId('old-price-' . $idSuffix),
             'price_type'        => 'oldPrice',
             'include_container' => true,

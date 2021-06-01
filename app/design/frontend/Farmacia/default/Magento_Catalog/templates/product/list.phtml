@@ -66,7 +66,8 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                         ?>
                         <span class="home-product-name">
                             <a class="home-product-link"
-                               href="<?= $block->escapeUrl($_product->getProductUrl()) ?>">
+                               href="<?= $block->escapeUrl($_product->getProductUrl()) ?>"
+                               title="<?= /* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name') ?>">
                                 <?= /* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
                             </a>
                         </span>

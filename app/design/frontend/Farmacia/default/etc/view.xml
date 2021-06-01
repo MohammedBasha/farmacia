@@ -186,7 +186,7 @@
 
         <!-- Gallery and magnifier theme settings. Start -->
         <var name="gallery">
-            <var name="nav">thumbs</var> <!-- Gallery navigation style (false/thumbs/dots) -->
+            <var name="nav">false</var> <!-- Gallery navigation style (false/thumbs/dots) -->
             <var name="loop">true</var> <!-- Gallery navigation loop (true/false) -->
             <var name="keyboard">true</var> <!-- Turn on/off keyboard arrows navigation (true/false) -->
             <var name="arrows">true</var> <!-- Turn on/off arrows on the sides preview (true/false) -->
@@ -230,7 +230,7 @@
                 </var>
                 <var name="options">
                     <var name="options">
-                        <var name="nav">dots</var>
+                        <var name="nav">false</var>
                     </var>
                 </var>
             </var>

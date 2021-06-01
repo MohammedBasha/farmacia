@@ -1,0 +1,30 @@
+<?php
+
+$_product = $block->getProduct();
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance(); // Instance of Object Manager
+$priceHelper = $objectManager->create('Magento\Framework\Pricing\Helper\Data'); // Instance of Pricing Helper
+$value =  1000; // or whatever value you have in your template
+$formattedCurrencyValue = $priceHelper->currency($value, true, false);
+
+?>
+
+<div class="product-price-discount-wrapper">
+    <div class="product-price-discount product-price-discount-1">
+        <span>
+            <?=
+                __('sconto ');
+                $priceHelper->currency(number_format((float)(1 - $_product->getSpecialPrice()/$_product->getPrice()) * 100, 0, '.', ''), true, false);
+            ?>
+        </span>
+        <span>
+            <?=
+                __('-') . $priceHelper->currency(($_product->getPrice() - $_product->getSpecialPrice()), true, false);
+            ?>
+        </span>
+    </div>
+    <div class="product-price-discount product-price-discount-2">
+        <span><strong><?= __('il nostro prezzo '); ?></strong><?= __('(iva inclusa)'); ?></span>
+        <span><?= $priceHelper->currency(($_product->getPrice() - $_product->getSpecialPrice()), true, false); ?></span>
+    </div>
+</div>

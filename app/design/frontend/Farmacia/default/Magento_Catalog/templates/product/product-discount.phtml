@@ -1,0 +1,8 @@
+
+<?php
+$_product = $block->getProduct();
+
+if ($_product->getPrice()>$_product->getFinalPrice()):
+    echo '<div class="salebox">-' . number_format((float)(1 - $_product->getSpecialPrice()/$_product->getPrice()) * 100, 0, '.', ''). '%</div>';
+endif;
+?>

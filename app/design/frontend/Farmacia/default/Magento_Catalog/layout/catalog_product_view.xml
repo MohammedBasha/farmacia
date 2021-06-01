@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+    <referenceContainer name="page.top">
+        <container name="product.top.wrapper" htmlTag="div" htmlClass="product-top-wrapper">
+            <container name="product.top.container" htmlTag="div" htmlClass="container">
+                <container name="product.top.row" htmlTag="div" htmlClass="row" />
+            </container>
+        </container>
+    </referenceContainer>
+        
+        <referenceContainer name="content">
+            <container name="product.content.wrapper" htmlTag="div" htmlClass="product-content-wrapper" before="-">
+                <container name="product.content.container" htmlTag="div" htmlClass="container">
+                    <container name="product.content.row" htmlTag="div" htmlClass="row">
+                        <block class="Magento\Catalog\Block\Product\View" name="product.desc.full" template="Magento_Catalog::product/product-desc-full.phtml" after="catalog.product.related" />
+                        <block name="home.brands" template="Magento_Theme::home.brands.phtml" after="-" />
+                    </container>
+                </container>
+            </container>
+        </referenceContainer>
+
+        <referenceContainer name="product.info.main">
+            <container name="product.main.info.wrapper" htmlTag="div" htmlClass="product-main-info-wrapper" before="-">
+                <block class="Magento\Catalog\Block\Product\View" name="product.category" template="Magento_Catalog::product/product-category.phtml" after="product.info.sku" />
+                <block class="Magento\Catalog\Block\Product\View" name="product.desc" template="Magento_Catalog::product/product-desc.phtml" after="product.info.type" />
+                <block class="Magento\Catalog\Block\Product\View" name="product.discount" template="Magento_Catalog::product/product-discount.phtml" />
+            </container>
+            <container name="product.price.wrapper" htmlTag="div" htmlClass="product-price-wrapper" after="-">
+                <block class="Magento\Catalog\Block\Product\View" name="product.pricing.discount" template="Magento_Catalog::product/product-pricing-discount.phtml" after="product.price.tier" />
+            </container>
+        </referenceContainer>
+
+        <move element="breadcrumbs" destination="product.top.row" />
+        <move element="product.info.main" destination="product.content.row" before="-" />
+        <move element="product.info.media" destination="product.content.row" after="product.info.main" />
+        <move element="catalog.product.related" destination="product.content.row" after="product.info.media" />
+        <move element="product.info.upsell" destination="product.content.row" after="product.desc.full" />
+
+        <move element="page.main.title" destination="product.main.info.wrapper" before="-" />
+        <move element="product.info.sku" destination="product.main.info.wrapper" after="page.main.title" />
+        <move element="product.info.type" destination="product.main.info.wrapper" after="product.category" />
+
+        <referenceBlock name="product.info.review" remove="true" />
+        <referenceBlock name="product.info.addto" remove="true" />
+        <referenceBlock name="product.info.details" remove="true" />
+
+        <move element="product.price.final" destination="product.price.wrapper" before="-" />
+        <move element="product.price.tier" destination="product.price.wrapper" after="product.price.final" />
+        <move element="product.info" destination="product.price.wrapper" after="product.pricing.discount" />
+
+    </body>
+</page>

@@ -203,6 +203,12 @@
             padding: 0;
         }
     }
+
+    .price-container {
+        .price-label {
+            display: none;
+        }
+    }
 }
 
 .category-details-custom {

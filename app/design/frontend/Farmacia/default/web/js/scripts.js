@@ -120,5 +120,15 @@ require(["jquery",
 
         // Initializing the Accordion Widget in the Footer Mobile
         $(".footer-content-mobile").accordion();
+
+        // Adding the Short and Full product description button's functionality in Product Page
+        $('.product-short-desc-wrapper a, .product-full-desc-wrapper a').click(function(e) {
+            e.preventDefault();
+            if ($(this).parent().hasClass('product-description-short')) {
+                $(this).parent().removeClass('product-description-short').addClass('product-description-full');
+            } else {
+                $(this).parent().removeClass('product-description-full').addClass('product-description-short');
+            }
+        })
     });
 });
